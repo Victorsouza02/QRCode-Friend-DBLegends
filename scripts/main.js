@@ -15,14 +15,17 @@ function createCodes(){
 
         // CLEAR QR CODE
         for (let index = 1; index <= 4; index++) {
+            document.querySelector("#titleqr").style.display = "none";
             document.querySelector("#qrcode"+index).innerHTML= "";
         }
 
         // MAKE NEW QR CODE
         for (let index = 1; index <= 4; index++) {
             if (document.querySelector("#id"+index).value != ""){
+                document.querySelector("#titleqr").style.display = "block";
+                document.querySelector("#textqr"+index).style.display = "block";
+
                 let time = date.getTime() + 5184000000;
-                console.log(time);
                 var qrcode = new QRCode("qrcode"+index, {
                     text: document.querySelector("#id"+index).value +"." + time,
                     width: 256,
@@ -31,7 +34,9 @@ function createCodes(){
                     colorLight: "white",
                     correctLevel : QRCode.CorrectLevel.H
                 });
-            } 
+            } else {
+                document.querySelector("#textqr"+index).style.display = "none";
+            }
         }
 }
 
