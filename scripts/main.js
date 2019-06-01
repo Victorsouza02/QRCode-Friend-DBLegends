@@ -21,8 +21,10 @@ function createCodes(){
         // MAKE NEW QR CODE
         for (let index = 1; index <= 4; index++) {
             if (document.querySelector("#id"+index).value != ""){
+                let time = date.getTime() + 5184000000;
+                console.log(time);
                 var qrcode = new QRCode("qrcode"+index, {
-                    text: document.querySelector("#id"+index).value +"." + date.getTime(),
+                    text: document.querySelector("#id"+index).value +"." + time,
                     width: 256,
                     height: 256,
                     colorDark: "black",
