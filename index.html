@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QRCode DB Legends</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="scripts/qrcode.js"></script>
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class="col-12 col-lg-8 offset-lg-2">
+                <div class="form-group">
+                        <label for="exampleFormControlInput1">Player ID 1</label>
+                        <input type="text" class="form-control" id="id1" placeholder="Friend ID - 10 digits">
+                        <label for="exampleFormControlInput1">Player ID 2</label>
+                        <input type="text" class="form-control" id="id2" placeholder="Friend ID - 10 digits">
+                        <label for="exampleFormControlInput1">Player ID 3</label>
+                        <input type="text" class="form-control" id="id3" placeholder="Friend ID - 10 digits">
+                        <label for="exampleFormControlInput1">Player ID 4</label>
+                        <input type="text" class="form-control" id="id4" placeholder="Friend ID - 10 digits">
+
+                        <button class="btn btn-success mt-3" id='create'>Create Codes</button>
+                        <p><a href="help.html">How to get player ID</a></p>
+                </div>
+
+                <div class="my-3 text-center bg-white py-5">
+                        <h3 class="text-center text-dark">QR Codes</h3>
+
+                        <h5 class="text-center text-dark my-3">QRCode 1</h5>
+                        <div id="qrcode1" class='qr bg-white'></div>
+                    
+                        <h5 class="text-center text-dark my-3">QRCode 2</h5>
+                        <div id="qrcode2" class='qr'></div>
+
+                    
+                        <h5 class="text-center text-dark my-3">QRCode 3</h5>
+                        <div id="qrcode3" class='qr'></div>
+
+                    
+                        <h5 class="text-center text-dark my-3">QRCode 4</h5>
+                        <div id="qrcode4" class='qr'></div>
+
+                </div>
+        </div>
+    </div>
+        
+
+    <script src="scripts/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js'></script>
+</body>
+</html>
