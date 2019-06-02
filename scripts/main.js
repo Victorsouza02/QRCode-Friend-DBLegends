@@ -1,4 +1,6 @@
 loadIds();
+loadNames();
+changeNames();
 
 document.querySelector("#create").addEventListener("click", (e)=>{
     saveIds();
@@ -23,7 +25,8 @@ function createCodes(){
         for (let index = 1; index <= 4; index++) {
             if (document.querySelector("#id"+index).value != ""){
                 document.querySelector("#titleqr").style.display = "block";
-                document.querySelector("#textqr"+index).style.display = "block";
+                document.querySelector("#textqr"+index).style.display = "inline-block";
+                document.querySelector("#change"+index).style.display = "inline-block";
 
                 let time = date.getTime() + 5184000000;
                 var qrcode = new QRCode("qrcode"+index, {
@@ -35,9 +38,25 @@ function createCodes(){
                     correctLevel : QRCode.CorrectLevel.H
                 });
             } else {
+                document.querySelector("#change"+index).style.display = "none";
                 document.querySelector("#textqr"+index).style.display = "none";
             }
         }
+}
+
+function changeNames(){
+    for (let index = 1; index <= 4; index++) {
+        document.querySelector("#change"+index).addEventListener("click",(e)=>{
+            localStorage.setItem("textqr"+index, document.querySelector("#textqr"+index).value);
+            document.querySelector("#change"+index).innerHTML = "Saved - Click to edit";
+        });
+    }
+}
+
+function loadNames(){
+    for (let index = 1; index <= 4; index++) {
+        document.querySelector("#textqr"+index).value = localStorage.getItem("textqr"+index);
+    }
 }
 
 function saveIds() {
